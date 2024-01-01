@@ -6,4 +6,5 @@ printf("Stack Overflow");
 return;
 }
 s[++(*top)]=item;
+printf("Item added");
 }
