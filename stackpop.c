@@ -1,6 +1,6 @@
-int pop(int item,int top)
+void pop(int item,int top)
 {
-if(top==-1)
+if(top=-1)
 {
 print("stack underflow:");
 return;
