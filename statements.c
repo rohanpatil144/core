@@ -1,0 +1,2 @@
+printf("Hi";
+printf("Hello");
