@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body ng-controller="todoController">
+   <h2>To Do List Application</h2>
+   <from ng-submit="addTask()">
+    Task:
+    <input type="text" ng-model="newTask">
+    <button type="submit">Add Task</button>
+   </from>
+   <table border="1">
+        <thead>
+            <th>Task</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="task in taskArray">
+                <td>{{task}}</td>
+                <td>
+                    <button ng-click="editTask()">Edit</button>
+                    </td><td>
+                    <button ng-click="deleteTask()">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+   </table>
+   <script>
+    var app=angular.module('todoApp',[]);
+    app.controller('todoController',function($scop){
+        $scope.taskArray=['Task 1','Task 2'];
+        $scope.addTask=function(){
+            $scope.taskArray.push($scope.newTask);
+            $scope.newTask='';
+        };
+        $scope.editTask=function(index){
+            var updatedTask = prompt('enter updated Task:');
+            if(updatedTask !== null){
+                $scop.taskArray.splice(index,1,updatedTask);
+
+            }
+        };
+        $scope.deleteTask=function(index){
+            $scope.taskArray.splice(index,1);
+        }
+    });
+   </script>
+
+</body>
+</html>
