@@ -1,4 +1,4 @@
-void displayStatus()
+void displayStatuss()
 {
 printf("Stack Status");
 printf("Top: %s \n",top);
