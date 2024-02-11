@@ -1,2 +1,2 @@
 printf("write");
-
+printf("read");
