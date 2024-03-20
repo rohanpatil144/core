@@ -1,6 +1,1 @@
 good morning
-hello
-hi..
-git
-ds
-os
